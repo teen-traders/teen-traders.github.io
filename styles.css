@@ -1,0 +1,628 @@
+/* Raleway */
+@import url("https://fonts.googleapis.com/css2?family=Raleway&display=swap");
+
+/* Pinyon */
+@import url("https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap");
+* {
+  box-sizing: border-box;
+
+  scroll-padding: 7vh;
+
+  overflow-anchor: none;
+
+  line-height: 25px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0px;
+  font-family: "Raleway", sans-serif;
+
+  height: 100vh;
+  width: 100vw;
+
+  overflow-y: scroll;
+  overflow-x: hidden;
+
+  background: linear-gradient(45deg, #000000, #333333);
+  background-size: 200% 800%;
+  animation: 10s gradientShift linear infinite;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  background-color: black;
+}
+
+.nav {
+  height: 50px;
+  width: 100%;
+  position: fixed;
+  color: white;
+
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.nav > .nav-header {
+  display: inline;
+}
+
+.nav > .nav-header > .nav-title {
+  display: inline-block;
+  font-size: 22px;
+  color: #fff;
+  padding: 10px 10px 10px 10px;
+
+  text-decoration: none;
+}
+
+.nav > .nav-btn {
+  display: none;
+}
+
+.nav > .nav-links {
+  display: inline;
+  float: right;
+  padding-right: 1%;
+  font-size: 18px;
+}
+
+.nav > .nav-links > a {
+  display: inline-block;
+  padding: 13px 10px 13px 10px;
+  text-decoration: none;
+  color: #efefef;
+}
+
+.nav > .nav-links > a:hover {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.nav > #nav-check {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .nav > .nav-btn {
+    display: inline-block;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+  }
+  .nav > .nav-btn > label {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    padding: 13px;
+  }
+  .nav > .nav-btn > label:hover,
+  .nav #nav-check:checked ~ .nav-btn > label {
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+  .nav > .nav-btn > label > span {
+    display: block;
+    width: 25px;
+    height: 10px;
+    border-top: 2px solid #eee;
+  }
+  .nav > .nav-links {
+    position: absolute;
+    display: block;
+    width: 100%;
+    background-color: #333;
+    height: 0px;
+    transition: all 0.3s ease-in;
+    overflow-y: hidden;
+    top: 50px;
+    left: 0px;
+  }
+  .nav > .nav-links > a {
+    display: block;
+    width: 100%;
+  }
+  .nav > #nav-check:not(:checked) ~ .nav-links {
+    height: 0px;
+  }
+  .nav > #nav-check:checked ~ .nav-links {
+    height: calc(100vh - 50px);
+    overflow-y: auto;
+  }
+}
+
+/* ! Main Body Container Code */
+.fadeInClass {
+  display: none;
+}
+
+.fadeInClassAnimationTitle {
+  animation: 1s fadeInBottomLess ease;
+}
+
+.fadeInClassAnimation {
+  animation: 2s fadeInBottom ease;
+  display: inline-block;
+}
+hr {
+  width: 90%;
+}
+
+.firstContainer {
+  width: 100%;
+
+  /* background: linear-gradient(45deg, #000000, #444444);
+  background-size: 200% 200%;
+  animation: 6s gradientShift linear infinite; */
+
+  color: white;
+}
+.twoWay {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  text-align: left;
+}
+
+.firstContainer h1 {
+  font-size: 3vw;
+  padding-left: 1%;
+
+  line-height: 70px;
+}
+.firstContainer h1 span {
+  background: linear-gradient(to right, green, red);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientShift 5s ease infinite; /* Adjust the duration as needed */
+  white-space: nowrap;
+  background-size: 150% 150%;
+}
+
+.firstContainer p {
+  font-size: 2vw;
+  padding-left: 1%;
+
+  line-height: 50px;
+}
+
+.firstContainer img {
+  width: 50%;
+  height: 50vw;
+}
+
+@media (max-width: 900px) {
+  .firstContainer {
+    padding-top: 10vh;
+    height: 130vh;
+  }
+
+  .firstContainer .leftMessage,
+  .firstContainer img {
+    width: 100%; /* Make both divs take up full width when stacked */
+    height: 100vw;
+  }
+}
+
+/* Slider Code */
+.slider {
+  width: 100%;
+  white-space: nowrap;
+
+  background-color: #555555;
+}
+
+.slide-track {
+  width: 200vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  animation: scroll 40s linear infinite; /* Adjust the duration as needed */
+}
+
+.slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: auto;
+}
+.slide img {
+  height: 20vh;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(50%);
+  }
+  100% {
+    transform: translateX(-100%); /* Adjust slide width as needed */
+  }
+}
+
+.container {
+  display: flex;
+  width: 100%;
+  height: auto;
+
+  flex-direction: column;
+  color: white;
+
+  border-radius: 1rem;
+
+  padding: 1%;
+}
+
+#about {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+    url("./assets/pittsburgh.png");
+
+  background-size: cover;
+
+  width: 100%;
+  border-radius: 0;
+
+  font-size: 1rem;
+  white-space: normal;
+
+  /* font-size: 1.3vw; */
+}
+
+.container h1 {
+  font-size: 2rem;
+
+  background: transparent;
+}
+
+#strategy {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.93), rgba(0, 0, 0, 0.93)),
+  url("./assets/chart.jpg");
+  background-position: center;
+}
+
+#strategy .twoWay {
+  justify-content: space-around;
+  width: 100%;
+}
+.smallBox h2 {
+  font-size: 2rem;
+  text-align: left;
+}
+.smallBox {
+  width: 40%;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+#strategy h1 {
+  font-size: 2.5rem;
+}
+
+.insideInfo h1 {
+  font-size: 2.5rem;
+}
+
+@media (max-width: 900px) {
+  .smallBox {
+    width: 100%;
+  }
+}
+
+.largerContainer {
+  width: 100%;
+  justify-content: space-around;
+  color: white;
+}
+
+#team {
+  width: 100%;
+  height: 100%;
+
+  color: white;
+
+  background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+    url("./assets/wall_street.jpeg");
+  background-position: center;
+
+  padding-left: 2%;
+}
+#team h1 {
+  font-size: 2.5rem;
+}
+
+.threeWay {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-around;
+}
+
+.personContainer {
+  width: 30%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.personContainer img {
+  max-width: 50%;
+}
+
+@media (max-width: 900px) {
+  .threeWay {
+    flex-direction: column;
+  }
+  .personContainer {
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-around;
+
+    margin-bottom: 1vh;
+  }
+
+  .personContainer img {
+    max-width: 20%;
+  }
+}
+
+#contact {
+  width: 50%;
+  height: 100%;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)),
+    url("./assets/floor.png");
+  background-position: center;
+
+  padding-left: 2%;
+}
+#contact h1 {
+  font-size: 2.5rem;
+}
+
+@media (max-width: 900px) {
+  #involved {
+    width: 100%;
+  }
+
+  #team {
+    width: 100%;
+  }
+
+  #contact {
+    width: 100%;
+  }
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes fadeInBottomLess {
+  from {
+    opacity: 0;
+    transform: translateY(10%);
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInBottom {
+  from {
+    opacity: 1;
+    transform: translateY(5vh);
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.insideInfo {
+  margin-right: 100px;
+}
+
+#wideVideo {
+  display: none;
+
+}
+
+@media (max-width: 900px) {
+  .twoWay {
+    flex-direction: column; /* Stack divs vertically */
+    text-align: center; /* Center the content */
+  }
+
+  .insideInfo {
+    margin: 0;
+  }
+
+  #wideVideo {
+    display: block;
+    width: 80%;
+    height: 300px;
+  }
+
+  #tallVideo {
+    display: none;
+  }
+}
+
+footer {
+  color: #777777;
+  width: 100%;
+  padding-left: 3vw;
+  font-size: 1rem;
+
+  /* background: linear-gradient(45deg, #000000, #444444);
+  background-size: 200% 200%;
+  animation: 6s gradientShift linear infinite; */
+
+  padding: 1%;
+}
+
+/* Random stuff */
+#twoWayAddInfo {
+  font-size: 1.4rem;
+}
+#spacers {
+  padding-top: 1vh;
+}
+
+#sponsor {
+  width: 50%;
+
+  height: 100%;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url("./assets/bull.jpeg");
+  background-position: center;
+
+  padding-left: 2vw;
+  padding-bottom: 30px;
+}
+
+#sponsor h1 {
+  font-size: 2.5rem;
+}
+
+#actionItems {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+
+  padding-bottom: 2vh;
+}
+
+#actionItems h1 {
+  font-size: 2.5rem;
+  color: white;
+}
+
+.miniItem {
+  color: white;
+
+  width: 30%;
+
+  padding: 5px;
+
+  background-color: #111111;
+}
+
+.threeWayTop {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+}
+
+.miniItem h2 {
+  text-align: center;
+}
+
+@media (max-width: 900px) {
+  .threeWayTop {
+    flex-direction: column;
+  }
+  .miniItem {
+    width: 100%;
+
+    margin-top: 0.5vh;
+    margin-bottom: 0.5vh;
+
+    background-color: transparent;
+  }
+
+  #sponsor {
+    width: 100%;
+  }
+
+  .miniItem h2 {
+    text-align: left;
+  }
+}
+
+#innerBoxOuter {
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#innerBox {
+  width: 70%;
+  white-space: nowrap;
+  text-align: center;
+
+  padding: 5px;
+
+  margin-bottom: 2vh;
+
+  background-color: rgba(150, 150, 150, 0.3);
+}
+
+#innerBox:hover {
+  background-color: rgba(10, 10, 10, 0.3);
+  cursor: pointer;
+}
+
+.button {
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+.button2 {
+  font-family: "Raleway", sans-serif;
+  background-color: #222222;
+  border: 2px solid green;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 2rem;
+  margin: auto;
+  margin-bottom: 25px;
+  cursor: pointer;
+  width: fit-content;
+  height: fit-content;
+
+  animation-name: buttonTest;
+  animation-duration: 4s;
+  animation-delay: 2s;
+  animation-iteration-count: infinite;
+}
+
+.button2:hover {
+  background-color: #333333;
+  cursor: pointer;
+  /*
+  border-color: red;
+  transition: 0.5s ease-in-out;
+  */
+}
+
+@keyframes buttonTest {
+  0%   {border-color: red;}
+  50%   {border-color: green;}
+  100%   {border-color: red;}
+}
